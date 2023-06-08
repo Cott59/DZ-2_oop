@@ -28,7 +28,7 @@ public:
 
 class Room : protected House {
 private:
-	
+	int _Number;
 	int _Quantity;
 	std::vector<Human*>_Room;
 
@@ -48,16 +48,21 @@ public:
 		return _Number;
 	}
 
+	void SetNumber()
+	{
+
+	}
 };
 
 class House {
 private:
 	int *_House = new int[1];
 protected:
-	int _Number=1;
+	int _Number = 0;
 public:
 	House(Room*) {
-		
+		_Number++;
+		int* tmp = new int[_House + 1];
 
 	}
 
