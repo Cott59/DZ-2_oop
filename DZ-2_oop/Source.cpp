@@ -14,7 +14,7 @@ public:
 			_Fio[index] = fio[index];
 	}
 
-	int GetHuman()
+	void ShowHuman()
 	{
 
 	}
@@ -26,7 +26,7 @@ public:
 
 };
 
-class Room : protected House {
+class Room {
 private:
 	int _Number;
 	int _Quantity;
@@ -56,13 +56,10 @@ public:
 
 class House {
 private:
-	int *_House = new int[1];
-protected:
-	int _Number = 0;
+	map<int, Room*>rooms;
+
 public:
-	House(Room*) {
-		_Number++;
-		int* tmp = new int[_House + 1];
+	
 
 	}
 
