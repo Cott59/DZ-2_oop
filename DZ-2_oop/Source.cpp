@@ -58,7 +58,7 @@ class House {
 private:
 	std::vector<Room*>_Room;
 	int number = 1;
-	int _Number = 0;
+	
 	
 	void AddRoom() {
 		Room* room = new Room(number);
