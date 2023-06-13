@@ -1,68 +1,100 @@
 #include<iostream>
 #include<string>
 #include<vector>
-
+#include<map>
 
 class Human {
 private:
-	char* _Fio;
-	int _Age;
+	std::string _Fio;
+	int _Age = 0;
 public:
-	Human(std::string fio,int age):_Age(age){
-		_Fio = new char[fio.length()];
-		for (int index = 0; index < fio.length(); ++index)
-			_Fio[index] = fio[index];
+	Human(std::string fio, int age) {
+		fio = new std::string _Fio;
+		_Age = age;
 	}
 
 	void ShowHuman()
 	{
-
+		std::cout << " FIO :" << _Fio << '\n';
+		std::cout << " Age :" << _Age << '\n';
 	}
-
 	~Human()
 	{
-		delete[]_Fio;
+		
 	}
 
+	
 };
 
 class Room {
 private:
 	int _Number;
-	int _Quantity;
-	std::vector<Human*>_Room;
-
+	std::vector<Human*> _Human;
 public:
-	Room(std::vector<Human*>room) :_Room(room){}
+	Room(int data):_Number(data){}
 
-	void AddHumanByRoom(Human* resident)
-	{
-		_Room.push_back(resident);
+	void NewHuman(std::string fio, int age) {
+		Human* human = new Human(fio,age);
+		_Human.push_back(human);
 	}
-	int GetQuantity()
+	
+	void GetQuantity()
 	{
-		std::cout << " Quantity resident = " << _Room.size() + 1 << '\n';
+		
 	}
 	int GetNumber()
 	{
 		return _Number;
 	}
 
-	void SetNumber()
-	{
-
+	
 	}
+	
 };
 
 class House {
 private:
-	map<int, Room*>rooms;
-
-public:
+	std::vector<Room*>_Room;
+	int number = 1;
+	int _Number = 0;
 	
+	void AddRoom() {
+		Room* room = new Room(number);
+		_Room.push_back(room);
+		number++;
+	}
+
+	void ShowCounterRoom() {
+		std::cout << _Room.size() << '\n';
+	}
+	void AddHuman(int number) {
+		_Room[number - 1]->NewHuman();
+			
+		int* tmp = new int[_House + 1];
 
 	}
 
+	~House() {
+		for (auto it = _Room.begin(); it != _Room.end(); ++it)
+			delete (*it);
+	
+	}
 };
 
+
+int main() {
+	setlocale(LC_ALL, "ru");
+	
+	House* Lenina45=new House;
+	Lenina45->AddRoom();
+	Lenina45->AddRoom();
+	Lenina45->AddRoom();
+	Lenina45->ShowCounterRoom();
+	
+
+
+
+
+	return 0;
+}
 
