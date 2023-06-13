@@ -9,7 +9,8 @@ private:
 	int _Age = 0;
 public:
 	Human(std::string fio, int age) {
-		fio = new std::string _Fio;
+		std::string = new std::string(fio); 
+		_Fio = fio;
 		_Age = age;
 	}
 
@@ -68,9 +69,8 @@ private:
 		std::cout << _Room.size() << '\n';
 	}
 	void AddHuman(int number) {
+		
 		_Room[number - 1]->NewHuman();
-			
-		int* tmp = new int[_House + 1];
 
 	}
 
@@ -90,7 +90,7 @@ int main() {
 	Lenina45->AddRoom();
 	Lenina45->AddRoom();
 	Lenina45->ShowCounterRoom();
-	
+	Lenina45->AddHuman(2)->
 
 
 
